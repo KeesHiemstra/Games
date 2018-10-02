@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeMath", "PracticeMath\PracticeMath.csproj", "{0665CB1D-CAFD-4442-A7F3-701E90A8A18C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationExercise", "CalculationExercise\CalculationExercise.csproj", "{42C0CA06-5293-4206-9736-B781F2E59436}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logikwis", "Logikwis\Logikwis.csproj", "{D299D2CC-D37B-4E25-8FCE-264FE8F79326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExp1", "WpfExp1\WpfExp1.csproj", "{0997AF38-7DF6-41C4-AC79-F22A6E21DD6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuSolverWFP", "SudokuSolverWFP\SudokuSolverWFP.csproj", "{8B51D5C7-9868-4608-A260-3428DDEF9040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExp2", "WpfExp2\WpfExp2.csproj", "{4209FF2B-E3B1-4AB4-8774-F12610628EC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0665CB1D-CAFD-4442-A7F3-701E90A8A18C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0665CB1D-CAFD-4442-A7F3-701E90A8A18C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0665CB1D-CAFD-4442-A7F3-701E90A8A18C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0665CB1D-CAFD-4442-A7F3-701E90A8A18C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42C0CA06-5293-4206-9736-B781F2E59436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C0CA06-5293-4206-9736-B781F2E59436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C0CA06-5293-4206-9736-B781F2E59436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C0CA06-5293-4206-9736-B781F2E59436}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D299D2CC-D37B-4E25-8FCE-264FE8F79326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D299D2CC-D37B-4E25-8FCE-264FE8F79326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D299D2CC-D37B-4E25-8FCE-264FE8F79326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D299D2CC-D37B-4E25-8FCE-264FE8F79326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0997AF38-7DF6-41C4-AC79-F22A6E21DD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0997AF38-7DF6-41C4-AC79-F22A6E21DD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0997AF38-7DF6-41C4-AC79-F22A6E21DD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0997AF38-7DF6-41C4-AC79-F22A6E21DD6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B51D5C7-9868-4608-A260-3428DDEF9040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B51D5C7-9868-4608-A260-3428DDEF9040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B51D5C7-9868-4608-A260-3428DDEF9040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B51D5C7-9868-4608-A260-3428DDEF9040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4209FF2B-E3B1-4AB4-8774-F12610628EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4209FF2B-E3B1-4AB4-8774-F12610628EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4209FF2B-E3B1-4AB4-8774-F12610628EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4209FF2B-E3B1-4AB4-8774-F12610628EC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

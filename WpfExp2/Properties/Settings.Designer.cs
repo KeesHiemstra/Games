@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PracticeMath.Properties
+namespace WpfExp2.Properties
 {
 
 

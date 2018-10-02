@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0665CB1D-CAFD-4442-A7F3-701E90A8A18C}</ProjectGuid>
+    <ProjectGuid>{0997AF38-7DF6-41C4-AC79-F22A6E21DD6B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PracticeMath</RootNamespace>
-    <AssemblyName>PracticeMath</AssemblyName>
+    <RootNamespace>WpfExp1</RootNamespace>
+    <AssemblyName>WpfExp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
