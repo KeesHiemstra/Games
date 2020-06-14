@@ -1,5 +1,7 @@
 ﻿using Sudoku.ViewModels;
 
+using Sudoku1.ViewModels;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +35,7 @@ namespace Sudoku.Models
       }
       Border border = new Border()
       {
+        Name = $"Cell_{index}",
         Width = 45,
         Height = 45,
         BorderThickness = new Thickness(1),
@@ -64,11 +67,15 @@ namespace Sudoku.Models
       Numbers.Clear();
       Result = result;
       Type = type;
+
+      Log.Write($"{border.Name} got {result} with {type}");
      }
 
-    public void RemoveNumber(byte number)
+    public bool RemoveNumber(byte number)
     {
-      if (Numbers.Count == 0) { return; }
+      bool removed = false;
+
+      if (Numbers.Count == 0) { return false; }
 
       for (int i = 0; i < Numbers.Count; i++)
       {
@@ -78,13 +85,13 @@ namespace Sudoku.Models
           WrapPanel wrapPanel = (WrapPanel)border.Child;
           wrapPanel.Children.Remove(Numbers[i].Visual);
           Numbers.RemoveAt(i);
+          removed = true;
+          Log.Write($"Remove {number} from {border.Name} ==> {Numbers.Count} numbers left");
           break;
         }
       }
+      return removed;
     }
 
-    public void CheckForResult()
-    {
-    }
   }
 }

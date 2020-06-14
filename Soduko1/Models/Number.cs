@@ -26,7 +26,7 @@ namespace Sudoku.Models
       };
       Border border = new Border()
       {
-        Name = $"D{Digit}",
+        Name = $"D_{Digit}",
         Width = 15,
         Height = 15,
         HorizontalAlignment = HorizontalAlignment.Center,

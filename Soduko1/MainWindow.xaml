@@ -9,5 +9,47 @@
   Width="800"
   Height="500"
   mc:Ignorable="d">
-  <Grid Name="SudocuGrid" Margin="20" />
+  <Grid Name="SudocuGrid" Margin="20">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <Border Name="SudokuBorder"/>
+
+    <StackPanel Grid.Column="1">
+      <StackPanel Orientation="Vertical">
+        <TextBlock Text="Location: "/>
+        <ListBox Name="LocationListBox">
+          <ListBoxItem Content="1" IsSelected="True"/>
+          <ListBoxItem Content="2"/>
+          <ListBoxItem Content="3"/>
+          <ListBoxItem Content="4"/>
+          <ListBoxItem Content="5"/>
+          <ListBoxItem Content="6"/>
+          <ListBoxItem Content="7"/>
+          <ListBoxItem Content="8"/>
+          <ListBoxItem Content="9"/>
+        </ListBox>
+      </StackPanel>
+
+      <StackPanel Orientation="Vertical">
+        <TextBlock Text="Direction: "/>
+        <ListBox Name="DirectionListBox">
+          <ListBoxItem Content="Column" IsSelected="True"/>
+          <ListBoxItem Content="Row"/>
+          <ListBoxItem Content="Area"/>
+        </ListBox>
+      </StackPanel>
+
+      <Button Name="ActionButton"
+              Content="Action"
+              Click="ActionButton_Click"
+              Margin="0,10,0,0"/>
+
+      <Button Name="GoToSetButton"
+              Content="Go ToSet"
+              Click="GoToSetButton_Click"
+              Margin="0,10,0,0"/>
+    </StackPanel>
+  </Grid>
 </Window>
