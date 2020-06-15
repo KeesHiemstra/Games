@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,6 +20,7 @@ namespace Sudoku.ViewModels
 	public class MainViewModel
 	{
 		private readonly MainWindow MainView;
+		private Dictionary<byte, byte> solution = new Dictionary<byte, byte>();
 		public Dictionary<byte, byte> ToSet = new Dictionary<byte, byte>();
 		public List<Cell> Sudoku { get; set; } = new List<Cell>();
 		public Canvas Visual { get; set; } = new Canvas();
@@ -82,7 +84,8 @@ namespace Sudoku.ViewModels
 
 		private void LoadSudoku()
 		{
-			string path = @"C:\Users\chi\OneDrive\Data\Sudoku\2020061301.txt";
+			Log.DeleteLog();
+			string path = @"C:\Users\chi\OneDrive\Data\Sudoku\2020061501.Sudoku";
 			byte row = 0;
 
 			Log.Write($"Using '{path}'");
@@ -104,12 +107,22 @@ namespace Sudoku.ViewModels
 					row++;
 				}
 			}
+
+			Run();
+      if (solution.Count == 81)
+      {
+				Log.Write("Solved");
+      }
 		}
 
 		private void FillCell(byte column, byte row, byte result, Cell.CellTypes action)
 		{
 			Sudoku[(byte)(column + row * 9)].SetCell(result, action);
-			
+      if (!solution.ContainsKey((byte)(column + row * 9)))
+      {
+				solution.Add((byte)(column + row * 9), result);
+			}
+
 			ClearNumbersColumn(column, result);
 			ClearNumbersRow(row, result);
 			ClearNumbersArea(column, row, result);
@@ -117,8 +130,6 @@ namespace Sudoku.ViewModels
 			CountNumbersColumn(column);
 			CountNumbersRow(row);
 			CountNumbersArea(column, row);
-
-			Run();
 		}
 
 		private void Run()

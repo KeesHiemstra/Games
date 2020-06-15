@@ -16,5 +16,13 @@ namespace Sudoku1.ViewModels
         stream.WriteLine(Message);
       }
     }
+
+    public static void DeleteLog()
+    {
+      if (File.Exists(LogFile))
+      {
+        File.Delete(LogFile);
+      }
+    }
   }
 }
