@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake", "Snake\Snake.csproj", "{311BCB28-7D95-4C00-8BAE-2DD9086710EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku1", "Soduko1\Sudoku1.csproj", "{90B8F39B-74E8-4053-A51B-AF1445D3F020}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuSolver", "SudokuSolver\SudokuSolver.csproj", "{90B8F39B-74E8-4053-A51B-AF1445D3F020}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
