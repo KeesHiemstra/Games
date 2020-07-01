@@ -1,0 +1,2 @@
+﻿Version 1.0.0.1 (2020-07-01)
+- Created README.md as guidance.
