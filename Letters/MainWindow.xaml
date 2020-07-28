@@ -5,10 +5,88 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Letters"
         mc:Ignorable="d"
-        Title="Cijfers & Letters (Letters)" 
+        KeyUp="Window_KeyUp"
+        Title="Cijfers en Letters (Letters)" 
         Height="450" 
         Width="800">
   <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <StackPanel Name="LettersPanel" 
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                Margin="0,20,0,0"
+                Grid.Row="1">
+    </StackPanel>
+
+    <StackPanel Name="GameButtonsPanel"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                Margin="0,20,0,0"
+                Grid.Row="2">
+      <Button Name="VowelButton"
+              Click="VowelButton_Click"
+              Content="Klinker"
+              Height="40"
+              Width="75"
+              Margin="0,0,20,0"/>
+      <Button Name="ConsonantButton"
+              Click="ConsonantButton_Click"
+              Content="Medeklinker"
+              Height="40"
+              Width="75"/>
+    </StackPanel>
+
+    <StackPanel Name="WordPanel" 
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                Visibility="Hidden"
+                Grid.Row="3">
+    </StackPanel>
+
+    <StackPanel Name="ResultStackPanel"
+                Orientation="Vertical"
+                HorizontalAlignment="Center"
+                Margin="0,20,0,0"
+                Visibility="Hidden"
+                Grid.Row="4">
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Text="Het woord is "
+                   FontSize="20"
+                   FontWeight="Bold"/>
+        <TextBlock Name="ResultTextBlock"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+      </StackPanel>
+
+      <StackPanel Name="ProposeStackPanel"
+                  Orientation="Horizontal"
+                  Margin="0,20,0,0"
+                  Visibility="Hidden">
+        <TextBlock Text="Een langer woord is "/>
+        <TextBlock Name="ProposeWordTextBlock"/>
+      </StackPanel>
+      
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal"
+                VerticalAlignment="Bottom"
+                Margin="10, 0, 10, 0"
+                Grid.Row="5">
+      <TextBlock Text="Score: "
+                 FontSize="20"/>
+      <TextBlock Name="GameScoreTextBlock" 
+                 Text="0"
+                 FontSize="20"
+                 FontWeight="Bold"/>
+    </StackPanel>
 
   </Grid>
 </Window>

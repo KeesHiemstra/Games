@@ -59,7 +59,8 @@ Number of words: 53118
 - [Scrabble](https://nl.wikipedia.org/wiki/Scrabble)
 - [Cijfers en letters](https://nl.wikipedia.org/wiki/Cijfers_en_Letters)
 
-### Todo
+### Wish list
 
-- [ ] The word list must a part of the resources.
-- [ ] Use the letter frequency.
+- [ ] Select the letter with clicking.
+- [X] Undo function.
+- [X] The word list must a part of the resources.

@@ -1,2 +1,9 @@
-﻿Version 1.0.0.1 (2020-07-01)
+﻿Version 1.0.0.2 (202-07-28)
+- Added undo selected letters.
+- Added handling the key strokes.
+- Created the masks for the random letters and the selected letter.
+- Added WordList.txt as word list.
+- Created GameViewModel.
+
+Version 1.0.0.1 (2020-07-01)
 - Created README.md as guidance.
