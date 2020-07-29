@@ -1,4 +1,9 @@
-﻿Version 1.0.0.2 (202-07-28)
+﻿Version 1.0.0.3 (2020-07-29)
+- Added a second player.
+- Added the number of plays.
+- Added mouse handling.
+
+Version 1.0.0.2 (202-07-28)
 - Added undo selected letters.
 - Added handling the key strokes.
 - Created the masks for the random letters and the selected letter.

@@ -28,7 +28,7 @@ namespace Letters
     {
       for (int i = 0; i < letterCount; i++)
       {
-        CreateMasker(LettersPanel);
+        CreateMasker(LettersPanel, i);
         CreateMasker(WordPanel);
       }
     }
@@ -37,7 +37,7 @@ namespace Letters
     /// Draw the game masker.
     /// </summary>
     /// <param name="panel"></param>
-    private void CreateMasker(Panel panel)
+    private void CreateMasker(Panel panel, int? position = null)
     {
       TextBlock textBlock = new TextBlock()
       {
@@ -57,6 +57,11 @@ namespace Letters
         Margin = new Thickness(0, 0, 20, 0),
         Child = textBlock,
       };
+
+      if (position.HasValue)
+      {
+        border.Name = $"BorderLetter_{position}";
+      }
 
       panel.Children.Add(border);
     }

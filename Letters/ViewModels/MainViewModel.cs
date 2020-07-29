@@ -24,7 +24,9 @@ namespace Letters.ViewModels
     private string RemainLetters = string.Empty;
     private string SelectedWord = string.Empty;
 
-    public int GameScore { get; set; } = 0;
+    public int GamePlay = 1;
+    public int GamePlayer = 0;
+    public int[] GameScore = new int[2];
     //Don't re-random too often
     public Random Rand = new Random();
 
@@ -91,14 +93,41 @@ namespace Letters.ViewModels
 
     private void ShowWordPanel()
     {
-      MainV.GameButtonsPanel.Visibility = System.Windows.Visibility.Hidden;
-      MainV.WordPanel.Visibility = System.Windows.Visibility.Visible;
+      for (int i = 0; i < RandomLetters.Count; i++)
+      {
+        ((Border)MainV.LettersPanel.Children[i]).MouseLeftButtonUp += border_MouseLeftButtonUp;
+      }
+
+      MainV.GameButtonsPanel.Visibility = Visibility.Hidden;
+      MainV.WordPanel.Visibility = Visibility.Visible;
     }
 
+    /// <summary>
+    /// Mouse handling.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    internal void border_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+      int position = int.Parse(((Border)sender).Name.Replace("BorderLetter_", ""));
+      MakeWord(position);
+    }
+
+    /// <summary>
+    /// Keyboard handling.
+    /// </summary>
+    /// <param name="e"></param>
     internal void DetectKey(KeyEventArgs e)
     {
       if (LetterCount > 0)
       {
+        return;
+      }
+
+      if (e.Key == Key.OemQuestion)
+      {
+        MessageBox.Show(Game.ProposeWord(RandomWord),
+          "Easter egg - Don't press <Enter>");
         return;
       }
 
@@ -122,16 +151,28 @@ namespace Letters.ViewModels
       MakeWord(e.Key.ToString());
     }
 
+    /// <summary>
+    /// From keyword.
+    /// </summary>
+    /// <param name="letter"></param>
     internal void MakeWord(string letter)
     {
       int pos = RemainLetters.IndexOf(letter);
+      MakeWord(pos);
+    }
 
-      SelectedLetters.Add(pos);
+    internal void MakeWord(int position)
+    {
+      ((Border)MainV.LettersPanel.Children[position]).MouseLeftButtonUp -= border_MouseLeftButtonUp;
+
+      string letter = RandomWord.Substring(position, 1);
+      SelectedLetters.Add(position);
       SelectedWord = SelectedWord.Insert(SelectedWord.Length, letter);
 
-      RandomLetters[pos].Foreground = Brushes.LightGray;
-      RemainLetters = RemainLetters.Remove(pos, 1);
-      RemainLetters = RemainLetters.Insert(pos, " ");
+      RandomLetters[position].Foreground = Brushes.LightGray;
+      
+      RemainLetters = RemainLetters.Remove(position, 1);
+      RemainLetters = RemainLetters.Insert(position, " ");
 
       ((TextBlock)((Border)(MainV.WordPanel.Children[SelectedWord.Length - 1])).Child).Text =
         letter;
@@ -148,7 +189,10 @@ namespace Letters.ViewModels
       RemainLetters = RemainLetters.Remove(SelectedLetters[pos], 1);
       RemainLetters = RemainLetters.Insert(SelectedLetters[pos], undoLetter.ToString());
 
-      SelectedLetters.Remove(SelectedLetters[pos]);
+      ((Border)MainV.LettersPanel.Children[SelectedLetters[pos]]).MouseLeftButtonUp += 
+        border_MouseLeftButtonUp;
+     SelectedLetters.Remove(SelectedLetters[pos]);
+
       SelectedWord = SelectedWord.Substring(0, pos);
     }
 
@@ -158,8 +202,16 @@ namespace Letters.ViewModels
       {
         MainV.ResultTextBlock.Text = "correct";
         MainV.ResultTextBlock.Foreground = Brushes.DarkGreen;
-        GameScore += SelectedWord.Length;
-        MainV.GameScoreTextBlock.Text = GameScore.ToString();
+        GameScore[GamePlayer] += SelectedWord.Length;
+        switch (GamePlayer)
+        {
+          case 1:
+            MainV.GameScoreRightTextBlock.Text = GameScore[GamePlayer].ToString();
+            break;
+          default:
+            MainV.GameScoreLeftTextBlock.Text = GameScore[GamePlayer].ToString();
+            break;
+        }
       }
       else
       {
@@ -191,6 +243,11 @@ namespace Letters.ViewModels
         letter.Foreground = Brushes.Black;
       }
 
+      for (int i = 0; i < RandomLetters.Count; i++)
+      {
+        ((Border)MainV.LettersPanel.Children[i]).MouseLeftButtonUp -= 
+          border_MouseLeftButtonUp;
+      }
       RemainLetters = "";
       RandomLetters.Clear();
       SelectedLetters.Clear();
@@ -210,6 +267,27 @@ namespace Letters.ViewModels
 
       MainV.GameButtonsPanel.Visibility = Visibility.Visible;
       MainV.WordPanel.Visibility = Visibility.Hidden;
+
+      GamePlayer++;
+      if (GamePlayer == GameScore.Length)
+      {
+        GamePlayer = 0;
+        GamePlay++;
+      }
+
+      switch (GamePlayer)
+      {
+        case 1:
+          MainV.LeftBorder.Background = Brushes.Transparent;
+          MainV.RightBorder.Background = Brushes.LightSalmon;
+          break;
+        default:
+          MainV.LeftBorder.Background = Brushes.LightSalmon;
+          MainV.RightBorder.Background = Brushes.Transparent;
+          break;
+      }
+
+      MainV.GamePlayTextBlock.Text = GamePlay.ToString();
     }
   }
 }

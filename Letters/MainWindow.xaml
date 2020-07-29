@@ -76,16 +76,49 @@
       
     </StackPanel>
 
-    <StackPanel Orientation="Horizontal"
+    <StackPanel Orientation="Vertical"
                 VerticalAlignment="Bottom"
-                Margin="10, 0, 10, 0"
+                Width="200"
                 Grid.Row="5">
-      <TextBlock Text="Score: "
-                 FontSize="20"/>
-      <TextBlock Name="GameScoreTextBlock" 
-                 Text="0"
-                 FontSize="20"
-                 FontWeight="Bold"/>
+      
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Text="Ronde: "
+                   FontSize="20"
+                   Margin="10,0,0,0"
+                   Width="150"/>
+        <TextBlock Name="GamePlayTextBlock" 
+                   Text="1"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+      </StackPanel>
+
+      <Border Name="LeftBorder"
+              Background="LightSalmon">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="Score links: "
+                     FontSize="20"
+                     Margin="10,0,0,0"
+                     Width="150"/>
+          <TextBlock Name="GameScoreLeftTextBlock" 
+                     Text="0"
+                     FontSize="20"
+                     FontWeight="Bold"/>
+        </StackPanel>
+      </Border>
+
+      <Border Name="RightBorder">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="Score rechts: "
+                     FontSize="20"
+                     Margin="10,0,0,0"
+                     Width="150"/>
+          <TextBlock Name="GameScoreRightTextBlock" 
+                     Text="0"
+                     FontSize="20"
+                     FontWeight="Bold"/>
+        </StackPanel>
+      </Border>
+
     </StackPanel>
 
   </Grid>

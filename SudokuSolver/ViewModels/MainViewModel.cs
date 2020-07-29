@@ -2,22 +2,16 @@
 
 using Sudoku1.ViewModels;
 
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Media;
-using System.Windows.Shell;
 
 namespace Sudoku.ViewModels
 {
-	public class MainViewModel
+  public class MainViewModel
 	{
 		private readonly MainWindow MainView;
 		private Dictionary<byte, byte> solution = new Dictionary<byte, byte>();
@@ -85,7 +79,7 @@ namespace Sudoku.ViewModels
 		private void LoadSudoku()
 		{
 			Log.DeleteLog();
-			string path = @"C:\Users\chi\OneDrive\Data\Sudoku\2020061601.Sudoku";
+			string path = @"C:\Users\chi\OneDrive\Data\Sudoku\2020072902.Sudoku";
 			byte row = 0;
 
 			Log.Write($"Using '{path}'");

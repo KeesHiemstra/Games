@@ -61,6 +61,6 @@ Number of words: 53118
 
 ### Wish list
 
-- [ ] Select the letter with clicking.
+- [X] Select the letter with clicking.
 - [X] Undo function.
 - [X] The word list must a part of the resources.
