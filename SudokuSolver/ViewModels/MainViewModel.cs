@@ -79,7 +79,7 @@ namespace Sudoku.ViewModels
 		private void LoadSudoku()
 		{
 			Log.DeleteLog();
-			string path = @"C:\Users\chi\OneDrive\Data\Sudoku\2020072902.Sudoku";
+			string path = @"C:\Users\chi\OneDrive\Data\Sudoku\2020080901.Sudoku";
 			byte row = 0;
 
 			Log.Write($"Using '{path}'");
